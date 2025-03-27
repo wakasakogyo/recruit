@@ -224,64 +224,57 @@ ul {
   }
 }
 
-/* ===== 企業情報セクション ===== */
-.about-section {
+/* ===== ニュースセクション ===== */
+.news-section {
   padding: 100px 0;
   background-color: var(--color-white);
 }
 
-.about-content {
-  max-width: 800px;
-  margin: 0 auto 60px;
-  text-align: center;
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
 }
 
-.about-text {
-  font-size: 18px;
-  line-height: 1.8;
-}
-
-.news-carousel {
-  position: relative;
-  max-width: 800px;
-  margin: 0 auto;
-  height: 200px;
-  overflow: hidden;
-}
-
-.carousel-item {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.news-card {
   background-color: var(--color-light-gray);
-  padding: 30px;
   border-radius: 8px;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  padding: 30px;
+  transition: all 0.3s ease;
 }
 
-.carousel-item.active {
-  opacity: 1;
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
 }
 
-.carousel-item h3 {
+.news-date {
+  font-size: 14px;
+  color: var(--color-dark-gray);
+  margin-bottom: 10px;
+}
+
+.news-category {
+  display: inline-block;
+  padding: 4px 10px;
+  background-color: var(--color-green-30);
+  color: var(--color-navy);
+  border-radius: 4px;
+  font-size: 12px;
   margin-bottom: 15px;
-  font-size: 24px;
 }
 
-.carousel-item a {
+.news-title {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.news-link {
   color: var(--color-green);
   font-weight: 500;
-  margin-top: 15px;
-  display: inline-block;
 }
 
-.carousel-item a:hover {
+.news-link:hover {
   color: var(--color-blue);
 }
 
@@ -308,6 +301,7 @@ ul {
 .job-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  border-top: 3px solid var(--color-blue);
 }
 
 .job-title {
@@ -321,27 +315,425 @@ ul {
   color: var(--color-navy-70);
 }
 
-.job-requirements {
-  margin-bottom: 30px;
+.job-link {
+  display: inline-block;
+  color: var(--color-green);
+  font-weight: 500;
+  margin-top: 15px;
 }
 
-.job-requirements h4 {
+.job-link:hover {
+  color: var(--color-blue);
+}
+
+/* ===== カルチャーセクション ===== */
+.culture-section {
+  padding: 100px 0;
+  background-color: var(--color-white);
+}
+
+.culture-content {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.culture-image {
+  flex: 1;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.culture-text {
+  flex: 1;
+}
+
+.culture-text h3 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.culture-text p {
   font-size: 18px;
+  line-height: 1.8;
+}
+
+/* ===== 福利厚生セクション ===== */
+.benefits-section {
+  padding: 100px 0;
+  background-color: var(--color-light-gray);
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.benefit-item {
+  text-align: center;
+}
+
+.benefit-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-green-30);
+  border-radius: 50%;
+}
+
+.benefit-item h3 {
+  font-size: 20px;
   margin-bottom: 10px;
-  color: var(--color-navy);
 }
 
-.job-requirements ul {
-  padding-left: 20px;
+.benefit-item p {
+  color: var(--color-navy-70);
 }
 
-.job-requirements li {
-  margin-bottom: 5px;
+/* ===== 採用フローセクション ===== */
+.flow-section {
+  padding: 100px 0;
+  background-color: var(--color-white);
+}
+
+.flow-steps {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.flow-step {
+  display: flex;
+  margin-bottom: 40px;
   position: relative;
-  padding-left: 15px;
 }
 
-.job-requirements li::before {
+.flow-step:not(:last-child)::after {
   content: '';
   position: absolute;
+  top: 60px;
+  left: 30px;
+  width: 3px;
+  height: calc(100% + 20px);
+  background-color: var(--color-green-30);
+}
+
+.step-number {
+  width: 60px;
+  height: 60px;
+  background-color: var(--color-green);
+  color: var(--color-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 700;
+  margin-right: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.step-content h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* ===== FAQセクション ===== */
+.faq-section {
+  padding: 100px 0;
+  background-color: var(--color-light-gray);
+}
+
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  margin-bottom: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--color-white);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.faq-question {
+  padding: 20px 30px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-question h3 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.toggle-icon {
+  font-size: 24px;
+  transition: all 0.3s ease;
+}
+
+.faq-answer {
+  padding: 0 30px;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faq-answer p {
+  padding-bottom: 20px;
+}
+
+.faq-item.active .toggle-icon {
+  transform: rotate(45deg);
+}
+
+.faq-item.active .faq-answer {
+  max-height: 300px;
+}
+
+/* ===== エントリーフォーム ===== */
+.contact-section {
+  padding: 100px 0;
+  background-color: var(--color-white);
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.required {
+  color: #FF3B30;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--color-gray);
+  border-radius: 4px;
+  font-family: var(--font-family);
+  font-size: 16px;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--color-green);
+}
+
+.privacy-policy {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.privacy-policy input {
+  width: auto;
+}
+
+.privacy-policy label {
+  margin-bottom: 0;
+}
+
+.privacy-policy a {
+  color: var(--color-green);
+}
+
+.submit-button {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background-color: var(--color-green);
+  color: var(--color-white);
+  border: none;
+  border-radius: 4px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: var(--color-blue);
+}
+
+/* ===== フッター ===== */
+.footer {
+  background-color: var(--color-navy);
+  color: var(--color-white);
+  padding: 80px 0 30px;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  margin-bottom: 50px;
+}
+
+.footer-info {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-logo {
+  height: 40px;
+  margin-bottom: 20px;
+}
+
+.footer-logo img {
+  height: 100%;
+}
+
+.footer-links {
+  display: flex;
+  gap: 50px;
+  flex: 2;
+}
+
+.footer-nav, .footer-social {
+  min-width: 200px;
+}
+
+.footer-contact {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.footer h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
   left: 0;
+  width: 40px;
+  height: 3px;
+  background-color: var(--color-green);
+}
+
+.footer ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer a {
+  color: var(--color-white);
+}
+
+.footer a:hover {
+  color: var(--color-green);
+}
+
+.footer-contact p {
+  margin-bottom: 10px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-policy-links {
+  display: flex;
+  gap: 20px;
+}
+
+/* ===== アニメーション ===== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== レスポンシブ ===== */
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 48px;
+  }
+
+  .news-grid, .jobs-grid, .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .culture-content {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-inner {
+    height: 70px;
+  }
+
+  .global-nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-white);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .global-nav.active {
+    display: block;
+  }
+
+  .global-nav ul {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .global-nav li {
+    border-bottom: 1px solid var(--color-gray);
+  }
+
+  .global-nav a {
+    display: block;
+    padding: 15px 30px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .hero-title {
+    font-size: 36px;
+  }
+
+  .hero-subtitle {
+    font-size: 18px;
+  }
+
+  .section-title
