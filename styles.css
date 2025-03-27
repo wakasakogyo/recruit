@@ -1,3 +1,6 @@
+以下に、採用LPのCSSコードを提供します。このCSSファイルは「styles.css」として保存してください。
+
+```css
 /* ===== 基本設定 ===== */
 :root {
   --color-white: #FFFFFF;
@@ -737,3 +740,6 @@ input:focus, select:focus, textarea:focus {
   }
 
   .section-title
+
+---
+Perplexity の Eliot より: pplx.ai/share
