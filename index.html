@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>採用情報 | 会社名</title>
-  <meta name="description" content="未来を創る仲間を募集しています。テクノロジーの力で社会課題を解決する当社で一緒に働きませんか？">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="favicon.ico">
+  <title>採用情報 | 未来を創る仲間を募集しています</title>
+  <meta name="description" content="私たちと一緒に、テクノロジーの力で社会課題を解決しませんか？多様な職種で仲間を募集しています。">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
   <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'GA_MEASUREMENT_ID');
+    gtag('config', 'G-XXXXXXXXXX');
   </script>
 </head>
 <body>
@@ -26,7 +26,7 @@
       </div>
       <nav class="global-nav">
         <ul>
-          <li><a href="#about">企業情報</a></li>
+          <li><a href="#news">ニュース</a></li>
           <li><a href="#jobs">募集職種</a></li>
           <li><a href="#culture">カルチャー</a></li>
           <li><a href="#benefits">福利厚生</a></li>
@@ -36,12 +36,14 @@
         </ul>
       </nav>
       <div class="menu-toggle">
-        <span></span><span></span><span></span>
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </div>
   </header>
 
-  <!-- メインビジュアル -->
+  <!-- ヒーローセクション -->
   <section class="hero">
     <div class="hero-inner">
       <h1 class="hero-title">未来を創る<br>仲間を募集しています</h1>
@@ -50,102 +52,78 @@
     </div>
     <div class="scroll-icon">
       <span>Scroll</span>
-      <i class="arrow-down"></i>
+      <div class="arrow-down"></div>
     </div>
   </section>
 
-  <!-- 企業情報 -->
-  <section id="about" class="about-section">
+  <!-- ニュースセクション -->
+  <section id="news" class="news-section">
     <div class="container">
-      <h2 class="section-title">企業情報</h2>
-      <div class="about-content">
-        <p class="about-text">
-          私たちは、テクノロジーの力で社会課題を解決するために設立されました。
-          革新的なサービスを通じて、人々の生活をより豊かにすることを目指しています。
-        </p>
-      </div>
-      <div class="news-carousel">
-        <div class="carousel-item active">
-          <h3>最新ニュース 1</h3>
-          <p>新サービスをリリースしました。</p>
-          <a href="#">詳細を見る</a>
+      <h2 class="section-title">最新ニュース</h2>
+      <div class="news-grid">
+        <div class="news-card fade-in">
+          <div class="news-date">2023.10.15</div>
+          <span class="news-category">プレスリリース</span>
+          <h3 class="news-title">新サービス「未来創造プラットフォーム」をリリースしました</h3>
+          <a href="#" class="news-link">詳細を見る</a>
         </div>
-        <div class="carousel-item">
-          <h3>最新ニュース 2</h3>
-          <p>新オフィスへ移転しました。</p>
-          <a href="#">詳細を見る</a>
+        <div class="news-card fade-in">
+          <div class="news-date">2023.09.28</div>
+          <span class="news-category">イベント</span>
+          <h3 class="news-title">テックカンファレンス2023に出展します</h3>
+          <a href="#" class="news-link">詳細を見る</a>
         </div>
-        <div class="carousel-item">
-          <h3>最新ニュース 3</h3>
-          <p>新たな取り組みを開始しました。</p>
-          <a href="#">詳細を見る</a>
+        <div class="news-card fade-in">
+          <div class="news-date">2023.09.01</div>
+          <span class="news-category">採用情報</span>
+          <h3 class="news-title">2024年度新卒採用を開始しました</h3>
+          <a href="#" class="news-link">詳細を見る</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 募集職種 -->
+  <!-- 募集職種セクション -->
   <section id="jobs" class="jobs-section">
     <div class="container">
       <h2 class="section-title">募集職種</h2>
       <div class="jobs-grid">
         <div class="job-card fade-in">
           <h3 class="job-title">エンジニア</h3>
-          <p class="job-description">最新技術を駆使して革新的なプロダクト開発に携わります。</p>
-          <div class="job-requirements">
-            <h4>求める人物像</h4>
-            <ul>
-              <li>技術への探究心がある方</li>
-              <li>チームでの開発経験がある方</li>
-            </ul>
-          </div>
-          <a href="#contact" class="job-apply-btn">応募する</a>
+          <p class="job-description">最新技術を駆使して革新的なプロダクト開発に携わります。フロントエンド、バックエンド、インフラなど、幅広い領域でスキルを活かせる環境です。</p>
+          <a href="#" class="job-link">詳しく見る</a>
         </div>
         <div class="job-card fade-in">
           <h3 class="job-title">デザイナー</h3>
-          <p class="job-description">ユーザー体験を最大化する魅力的なデザインを創出します。</p>
-          <div class="job-requirements">
-            <h4>求める人物像</h4>
-            <ul>
-              <li>ユーザー視点でデザインできる方</li>
-              <li>新しいトレンドに敏感な方</li>
-            </ul>
-          </div>
-          <a href="#contact" class="job-apply-btn">応募する</a>
+          <p class="job-description">ユーザー体験を最大化する魅力的なデザインを創出します。UI/UXデザインからブランディングまで、デザインの力でビジネスの成長に貢献します。</p>
+          <a href="#" class="job-link">詳しく見る</a>
         </div>
         <div class="job-card fade-in">
           <h3 class="job-title">マーケター</h3>
-          <p class="job-description">データ分析に基づく効果的なマーケティング戦略を立案します。</p>
-          <div class="job-requirements">
-            <h4>求める人物像</h4>
-            <ul>
-              <li>データ分析スキルを持つ方</li>
-              <li>クリエイティブな発想ができる方</li>
-            </ul>
-          </div>
-          <a href="#contact" class="job-apply-btn">応募する</a>
+          <p class="job-description">データ分析に基づく効果的なマーケティング戦略を立案します。デジタルマーケティングのスキルを活かし、サービスの成長を加速させます。</p>
+          <a href="#" class="job-link">詳しく見る</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- カルチャー -->
+  <!-- カルチャーセクション -->
   <section id="culture" class="culture-section">
     <div class="container">
       <h2 class="section-title">カルチャー</h2>
       <div class="culture-content">
-        <div class="culture-image parallax" data-speed="0.1">
+        <div class="culture-image fade-in">
           <img src="culture-image.jpg" alt="オフィス風景">
         </div>
         <div class="culture-text fade-in">
           <h3>私たちの価値観</h3>
-          <p>イノベーションを追求し、常に新しいことにチャレンジする文化があります。失敗を恐れず、学びを大切にする環境で共に成長していきましょう。</p>
+          <p>イノベーションを追求し、常に新しいことにチャレンジする文化があります。失敗を恐れず、学びを大切にする環境で共に成長していきましょう。多様性を尊重し、それぞれの個性や強みを活かしながら、社会課題の解決に取り組んでいます。</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 福利厚生 -->
+  <!-- 福利厚生セクション -->
   <section id="benefits" class="benefits-section">
     <div class="container">
       <h2 class="section-title">福利厚生</h2>
@@ -182,7 +160,7 @@
     </div>
   </section>
 
-  <!-- 採用フロー -->
+  <!-- 採用フローセクション -->
   <section id="flow" class="flow-section">
     <div class="container">
       <h2 class="section-title">採用フロー</h2>
@@ -226,7 +204,7 @@
     </div>
   </section>
 
-  <!-- FAQ -->
+  <!-- FAQセクション -->
   <section id="faq" class="faq-section">
     <div class="container">
       <h2 class="section-title">よくある質問</h2>
@@ -318,14 +296,17 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
-        <div class="footer-logo">
-          <img src="logo-white.svg" alt="会社ロゴ">
+        <div class="footer-info">
+          <div class="footer-logo">
+            <img src="logo-white.svg" alt="会社ロゴ">
+          </div>
+          <p>テクノロジーの力で社会課題を解決する</p>
         </div>
         <div class="footer-links">
           <div class="footer-nav">
             <h3>サイトマップ</h3>
             <ul>
-              <li><a href="#about">企業情報</a></li>
+              <li><a href="#news">ニュース</a></li>
               <li><a href="#jobs">募集職種</a></li>
               <li><a href="#culture">カルチャー</a></li>
               <li><a href="#benefits">福利厚生</a></li>
@@ -352,7 +333,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2025 会社名. All Rights Reserved.</p>
+        <p>&copy; 2023 会社名. All Rights Reserved.</p>
         <ul class="footer-policy-links">
           <li><a href="/privacy-policy">プライバシーポリシー</a></li>
           <li><a href="/terms">利用規約</a></li>
@@ -361,6 +342,24 @@
     </div>
   </footer>
 
-  <script src="scripts.js"></script>
-</body>
-</html>
+  <script>
+    // スクロールアニメーション
+    document.addEventListener('DOMContentLoaded', function() {
+      const fadeElements = document.querySelectorAll('.fade-in');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      fadeElements.forEach(element => {
+        observer.observe(element);
+      });
+      
+      // FAQアコーディオン
+      const faqItems = document.querySelectorAll('.faq-item');
+      
+      faqItems.forEach(item =>
