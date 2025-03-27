@@ -1,203 +1,637 @@
-/* General Styles */
+/* 基本スタイル */
+:root {
+  --primary: #137dc5; /* トレンドの「エーテリアルブルー」 */
+  --accent: #ffc93c; /* 「マスタードイエロー」 - 2025年のトレンドカラー */
+  --pop: #bf1922; /* 「バーニングレッド」 - 2025年の注目色 */
+  --neutral: #f7e8d3; /* 「クリーム」 - 柔らかな背景色 */
+  --dark: #112d4e; /* 「ミッドナイト」 - テキスト用 */
+  --light: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: 'Noto Sans JP', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #FFFFFF;
-    color: #333333;
+  font-family: 'Poppins', 'Noto Sans JP', sans-serif;
+  color: var(--dark);
+  background-color: var(--light);
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
-/* Header */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ヘッダー */
 header {
-    background-color: #005BAC;
-    color: #FFFFFF;
-    padding: 10px 20px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-}
-header .header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-header .global-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-header .global-nav ul li {
-    margin: 0 10px;
-}
-header .global-nav ul li a {
-    color: #FFFFFF;
-    text-decoration: none;
-    font-weight: 500;
+  background-color: var(--primary);
+  padding: 15px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Hero Section */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.global-nav ul {
+  display: flex;
+  list-style: none;
+}
+
+.global-nav ul li {
+  margin-left: 25px;
+}
+
+.global-nav ul li a {
+  color: var(--light);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.global-nav ul li a:hover {
+  color: var(--accent);
+}
+
+.global-nav ul li a.active {
+  color: var(--accent);
+}
+
+.contact-btn {
+  background-color: var(--accent);
+  color: var(--dark) !important;
+  padding: 8px 16px;
+  border-radius: 50px;
+}
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--light);
+  margin: 5px 0;
+  transition: all 0.3s ease;
+}
+
+/* ヒーローセクション */
 .hero {
-    background: linear-gradient(to bottom, #005BAC, #F5F5F5);
-    color: #FFFFFF;
-    text-align: center;
-    padding: 100px 20px;
-}
-.hero .hero-title {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
-.hero .hero-subtitle {
-    font-size: 1.2em;
-    margin-bottom: 30px;
-}
-.hero .cta-button {
-    background-color: #FFFFFF;
-    color: #005BAC;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 80px;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--primary) 0%, #00cfc8 100%);
 }
 
-/* Section Titles */
-.section-title {
-    font-size: 2em;
-    color: #005BAC;
-    text-align: center;
-    margin: 40px 0;
+.hero-bg-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('images/dots-pattern.svg');
+  opacity: 0.1;
+  animation: moveBg 20s linear infinite;
 }
 
-/* Recruit Navigation */
+@keyframes moveBg {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+.hero-container {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.hero-title {
+  font-size: 4.5rem;
+  font-weight: 800;
+  color: var(--light);
+  margin-bottom: 20px;
+  line-height: 1.1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: var(--light);
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--accent);
+  color: var(--dark);
+  padding: 12px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  background-color: #ffd54f;
+}
+
+.cta-button span {
+  margin-right: 10px;
+}
+
+.cta-button svg {
+  transition: transform 0.3s ease;
+}
+
+.cta-button:hover svg {
+  transform: translateX(5px);
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--light);
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+}
+
+.scroll-arrow {
+  width: 20px;
+  height: 30px;
+  border: 2px solid var(--light);
+  border-radius: 10px;
+  margin-top: 10px;
+  position: relative;
+}
+
+.scroll-arrow::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  background-color: var(--light);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  animation: scrollDown 2s infinite;
+}
+
+@keyframes scrollDown {
+  0% { transform: translate(-50%, 0); opacity: 1; }
+  80% { transform: translate(-50%, 15px); opacity: 0; }
+  100% { transform: translate(-50%, 0); opacity: 0; }
+}
+
+/* 採用情報ナビゲーション */
 .recruit-nav {
-    background-color: #F5F5F5;
-    padding: 20px 0;
-}
-.recruit-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-}
-.recruit-nav ul li {
-    margin: 0 15px;
-}
-.recruit-nav ul li a {
-    text-decoration: none;
-    color: #005BAC;
-    font-weight: 500;
+  background-color: var(--light);
+  padding: 20px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
-/* Service Section */
-.service {
-    padding: 40px 20px;
-    background-color: #FFFFFF;
-}
-.service-items {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-.service-item {
-    text-align: center;
-    margin: 20px;
-    max-width: 300px;
-}
-.service-item img {
-    max-width: 100%;
-    height: auto;
+.recruit-nav-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 15px;
 }
 
-/* Recruit Section */
-.recruit-section {
-    padding: 40px 20px;
-}
-.recruit-section.bg-light {
-    background-color: #F5F5F5;
-}
-.recruit-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-}
-.recruit-table th, .recruit-table td {
-    border: 1px solid #CCCCCC;
-    padding: 10px;
-    text-align: left;
-}
-.recruit-table th {
-    background-color: #005BAC;
-    color: #FFFFFF;
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  padding: 15px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  background-color: var(--neutral);
 }
 
-/* Culture Section */
+.nav-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background-color: var(--accent);
+  color: var(--dark);
+}
+
+.nav-icon {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.nav-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+/* セクションスタイル */
+section {
+  padding: 80px 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-tag {
+  display: inline-block;
+  background-color: var(--accent);
+  color: var(--dark);
+  padding: 5px 15px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background-color: var(--accent);
+}
+
+/* カルチャーセクション */
 .culture-section {
-    padding: 40px 20px;
-}
-.culture-section.bg-light {
-    background-color: #F5F5F5;
-}
-.culture-items {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-.culture-item {
-    text-align: center;
-    margin: 20px;
-    max-width: 300px;
-}
-.culture-item img {
-    max-width: 100%;
-    height: auto;
+  background-color: var(--neutral);
 }
 
-/* Benefits Section */
-.benefits-section {
-    padding: 40px 20px;
-    background-color: #FFFFFF;
-}
-.benefits-items {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-.benefits-item {
-    text-align: center;
-    margin: 20px;
-    max-width: 300px;
-}
-.benefits-item img {
-    max-width: 100%;
-    height: auto;
+.culture-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 20px 0;
+  margin-bottom: 40px;
+  scrollbar-width: none;
 }
 
-/* FAQ Section */
-.faq-section {
-    padding: 40px 20px;
-    background-color: #F5F5F5;
-}
-.faq-items {
-    max-width: 800px;
-    margin: 0 auto;
-}
-.faq-item {
-    margin-bottom: 20px;
-}
-.faq-item h4 {
-    font-size: 1.2em;
-    color: #005BAC;
-}
-.faq-item p {
-    margin: 10px 0;
+.culture-slider::-webkit-scrollbar {
+  display: none;
 }
 
-/* Footer */
-footer {
-    background-color: #005BAC;
-    color: #FFFFFF;
-    text-align: center;
-    padding: 20px 0;
+.culture-slide {
+  min-width: 300px;
+  background-color: var(--light);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.culture-slide:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.culture-photo {
+  height: 200px;
+  overflow: hidden;
+}
+
+.culture-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.culture-slide:hover .culture-photo img {
+  transform: scale(1.1);
+}
+
+.culture-caption {
+  padding: 20px;
+}
+
+.culture-caption h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: var(--primary);
+}
+
+.culture-values {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.value-item {
+  background-color: var(--light);
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.value-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.value-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.value-item h4 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: var(--primary);
+}
+
+/* 福利厚生セクション */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.benefits-card {
+  background-color: var(--light);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.benefits-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background-color: var(--accent);
+}
+
+.benefits-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.benefits-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.benefits-card h4 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: var(--primary);
+}
+
+/* メッセージセクション */
+.message-section {
+  background: linear-gradient(rgba(17, 45, 78, 0.9), rgba(17, 45, 78, 0.9)), url('images/team-photo.jpg');
+  background-size: cover;
+  background-position: center;
+  color: var(--light);
+  text-align: center;
+  padding: 100px 0;
+}
+
+.message-title {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.message-text {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  opacity: 0.9;
+}
+
+.cta-button-large {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--pop);
+  color: var(--light);
+  padding: 15px 40px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button-large:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  background-color: #d81b24;
+}
+
+/* フッター */
+.footer {
+  background-color: var(--primary);
+  color: var(--light);
+  padding: 60px 0 20px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.footer-logo img {
+  height: 40px;
+  margin-bottom: 20px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 60px;
+}
+
+.footer-nav h4, .footer-social h4 {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.footer-nav ul, .social-links {
+  list-style: none;
+}
+
+.footer-nav ul li, .social-links li {
+  margin-bottom: 10px;
+}
+
+.footer-nav ul li a, .social-links li a {
+  color: var(--light);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  opacity: 0.8;
+}
+
+.footer-nav ul li a:hover, .social-links li a:hover {
+  opacity: 1;
+  color: var(--accent);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.copyright {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 992px) {
+  .hero-title {
+    font-size: 3.5rem;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .footer-links {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  
+  .global-nav {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary);
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    clip-path: circle(0% at 100% 0);
+    transition: all 0.4s ease-out;
+  }
+  
+  .global-nav.active {
+    clip-path: circle(150% at 100% 0);
+  }
+  
+  .global-nav ul {
+    flex-direction: column;
+  }
+  
+  .global-nav ul li {
+    margin: 15px 0;
+  }
+  
+  .hero-title {
+    font-size: 2.8rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .message-title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .culture-slider {
+    padding-bottom: 20px;
+  }
+  
+  .culture-slide {
+    min-width: 260px;
+  }
+  
+  .message-title {
+    font-size: 1.8rem;
+  }
+  
+  .message-text {
+    font-size: 1rem;
+  }
+  
+  .footer-links {
+    flex-direction: column;
+    gap: 30px;
+  }
 }
