@@ -121,6 +121,27 @@ header {
   animation: moveBg 20s linear infinite;
 }
 
+/* 重ねる画像のスタイル */
+.hero-overlay-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3; /* hero-containerより下、bg-animationより上 */
+  width: 100%;
+  max-width: 500px; /* 画像の最大幅を設定 */
+  pointer-events: none; /* 下の要素へのクリックを妨げないように */
+}
+
+.hero-overlay-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  /* 必要に応じてフィルターやブレンドモードを追加 */
+  /* filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3)); */
+  /* mix-blend-mode: overlay; */
+}
+
 @keyframes moveBg {
   0% { transform: translateY(0); }
   100% { transform: translateY(-50%); }
@@ -128,99 +149,24 @@ header {
 
 .hero-container {
   position: relative;
-  z-index: 2;
+  z-index: 4; /* 重ねる画像より上に表示 */
   max-width: 800px;
   padding: 0 20px;
 }
 
-.hero-title {
-  font-size: 4.5rem;
-  font-weight: 800;
-  color: var(--light);
-  margin-bottom: 20px;
-  line-height: 1.1;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .hero-overlay-image {
+    max-width: 350px; /* 小さい画面では画像を小さく */
+  }
 }
 
-.hero-subtitle {
-  font-size: 1.5rem;
-  color: var(--light);
-  margin-bottom: 40px;
-  opacity: 0.9;
+@media (max-width: 576px) {
+  .hero-overlay-image {
+    max-width: 250px; /* さらに小さい画面ではさらに小さく */
+  }
 }
 
-.cta-button {
-  display: inline-flex;
-  align-items: center;
-  background-color: var(--accent);
-  color: var(--dark);
-  padding: 12px 30px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.cta-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  background-color: #ffd54f;
-}
-
-.cta-button span {
-  margin-right: 10px;
-}
-
-.cta-button svg {
-  transition: transform 0.3s ease;
-}
-
-.cta-button:hover svg {
-  transform: translateX(5px);
-}
-
-.scroll-indicator {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: var(--light);
-  font-size: 0.8rem;
-  letter-spacing: 2px;
-}
-
-.scroll-arrow {
-  width: 20px;
-  height: 30px;
-  border: 2px solid var(--light);
-  border-radius: 10px;
-  margin-top: 10px;
-  position: relative;
-}
-
-.scroll-arrow::before {
-  content: '';
-  position: absolute;
-  top: 5px;
-  left: 50%;
-  width: 6px;
-  height: 6px;
-  background-color: var(--light);
-  border-radius: 50%;
-  transform: translateX(-50%);
-  animation: scrollDown 2s infinite;
-}
-
-@keyframes scrollDown {
-  0% { transform: translate(-50%, 0); opacity: 1; }
-  80% { transform: translate(-50%, 15px); opacity: 0; }
-  100% { transform: translate(-50%, 0); opacity: 0; }
-}
 
 /* 採用情報ナビゲーション */
 .recruit-nav {
