@@ -129,7 +129,7 @@ header {
   transform: translate(-50%, -50%);
   z-index: 3; /* hero-containerより下、bg-animationより上 */
   width: 100%;
-  max-width: 500px; /* 画像の最大幅を設定 */
+  max-width: 1200px; /* 画像の最大幅を設定 */
   pointer-events: none; /* 下の要素へのクリックを妨げないように */
 }
 
