@@ -476,7 +476,7 @@ section {
 
 /* メッセージセクション */
 .message-section {
-  background: linear-gradient(rgba(17, 45, 78, 0.9), rgba(17, 45, 78, 0.9)), url('images/team-photo.jpg');
+  background: linear-gradient(rgba(17, 45, 78, 0.9), rgba(17, 45, 78, 0.9)), url('images/team-photo.png');
   background-size: cover;
   background-position: center;
   color: var(--light);
